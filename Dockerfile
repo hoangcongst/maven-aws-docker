@@ -1,6 +1,6 @@
-FROM maven:3.6-jdk-11
+FROM maven:3.8.1-openjdk-11
 
-LABEL maintainer="SoftInstigate <info@softinstigate.com>"
+LABEL maintainer="hoangcongst <hoangcongst@gmail.com>"
 
 RUN apt-get update && apt-get -y install groff
 RUN curl --silent --show-error --fail "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"

@@ -6,5 +6,5 @@ if [[ -z $RELEASE ]]; then
     exit 1
 fi
 
-docker build -t softinstigate/maven-aws:latest .
-docker tag softinstigate/maven-aws:latest softinstigate/maven-aws:"$RELEASE"
+docker build -t hoangcongst/maven-aws-cli:latest .
+docker tag hoangcongst/maven-aws-cli:latest hoangcongst/maven-aws-cli:"$RELEASE"

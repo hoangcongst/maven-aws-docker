@@ -1,9 +1,0 @@
-services:
-  - docker
-script:
-  - ./bin/build.sh
-after_success:
-  - ./bin/push.sh
-env:
-  global:
-    - RELEASE=3.0.0

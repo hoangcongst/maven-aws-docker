@@ -1,6 +1,4 @@
-# Maven + AWS cli + ECS cli
-
-[![Build Status](https://travis-ci.org/SoftInstigate/maven-aws-docker.svg?branch=master)](https://travis-ci.org/SoftInstigate/maven-aws-docker)
+# Maven + AWS cli + ECS cli forked from softinstigate/maven-aws
 
 A Docker image for Apache Maven with [AWS Command Line Interface](https://aws.amazon.com/cli/) and [Amazon ECS command line interface](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cmd-ecs-cli.html) tools.
 
@@ -13,12 +11,12 @@ The default ENTRYPOINT for this image is `mvn`.
 If you want to `mvn clean install` your Java project, CD where the pom.xml is located, then:
 
 ```bash
-$ docker pull softinstigate/maven-aws
+$ docker pull hoangcongst/maven-aws-cli
 $ docker run -it --rm \
     -v "$PWD":/usr/src/app  \
     -v "$HOME"/.m2:/root/.m2 \
     -w /usr/src/app \
-    softinstigate/maven-aws \
+    hoangcongst/maven-aws-cli \
     clean install
 ```
 
@@ -27,13 +25,13 @@ $ docker run -it --rm \
 ### Run aws ###
 
 ```bash
-docker run -it --rm --entrypoint "aws" softinstigate/maven-aws
+docker run -it --rm --entrypoint "aws" hoangcongst/maven-aws-cli
 ```
 
 ### Run ecs-cli ###
 
 ```bash
-docker run -it --rm --entrypoint "ecs-cli" softinstigate/maven-aws
+docker run -it --rm --entrypoint "ecs-cli" hoangcongst/maven-aws-cli
 ```
 
 ### Print the installed versions
@@ -41,10 +39,10 @@ docker run -it --rm --entrypoint "ecs-cli" softinstigate/maven-aws
 To print the version of each installed tool, you can run the `startup.sh` script:
 
 ```bash
-docker run -it --rm --entrypoint="./startup.sh" softinstigate/maven-aws
+docker run -it --rm --entrypoint="./startup.sh" hoangcongst/maven-aws-cli
 
 =================================================
-Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+Apache Maven 3.8.1 (cecedd343002696d0abb50b32b541b8a6ba2883f)
 Maven home: /usr/share/maven
 Java version: 11.0.9, vendor: Oracle Corporation, runtime: /usr/local/openjdk-11
 Default locale: en, platform encoding: UTF-8
